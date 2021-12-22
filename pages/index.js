@@ -1,6 +1,6 @@
 import H from "@cmp/H";
 import Header from "@cmp/Header";
-import { useScrollEffect } from "@cmp/Scroller";
+import { useScrollEffect } from "@useScrollEffect";
 import Head from "next/head";
 import Image from "next/image";
 

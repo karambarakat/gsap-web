@@ -2,7 +2,9 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@cmp/*": ["./components/*"]
+      "@cmp/*": ["./components/*"],
+      "@lib/*": ["./lib/*"],
+      "@useScrollEffect": ["./lib/useScrollEffect"]
     }
   }
 }

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import A1 from "@cmp/A1";
 import Ul from "@cmp/Ul";
-import Scroller, { useScrollEffect } from "@cmp/Scroller";
+import { useScrollEffect } from "@useScrollEffect";
 
 function Header() {
   const [scrolled, setScrolled] = useState(false);

@@ -1,4 +1,5 @@
-import Scroller, { ScrollProvider } from "@cmp/Scroller";
+import { ScrollProvider } from "@useScrollEffect";
+
 import { ThemeProvider } from "theme-ui";
 
 export const theme = {
