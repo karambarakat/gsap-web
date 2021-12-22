@@ -8,12 +8,12 @@ export default function Home() {
   useScrollEffect(
     (obj) => {
       console.log("index.js", obj);
-      function cb() {
-        console.log("after 2000");
-      }
 
-      if (obj.threshold === 2000) obj.registerCallback(cb);
-      else if (obj.threshold === 4000) obj.removeCallback();
+      // function cb() {
+      //   console.log("after 2000");
+      // }
+      // if (obj.threshold === 2000) obj.registerCallback(cb);
+      // else if (obj.threshold === 4000) obj.removeCallback();
     },
     [0, 2000, 4000, 6000]
   );
