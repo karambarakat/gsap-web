@@ -1,21 +1,33 @@
 import H from "@cmp/H";
 import Header from "@cmp/Header";
-import { useScrollEffect } from "@useScrollEffect";
+import {
+  useDownScrollEffect,
+  useScrollEffect,
+  useUpScrollEffect,
+} from "@useScrollEffect";
 import Head from "next/head";
 import Image from "next/image";
 
 export default function Home() {
   useScrollEffect(
     (obj) => {
-      console.log("index.js", obj);
+      console.log("index.js", obj.dir, obj.threshold);
 
-      // function cb() {
-      //   console.log("after 2000");
-      // }
-      // if (obj.threshold === 2000) obj.registerCallback(cb);
-      // else if (obj.threshold === 4000) obj.removeCallback();
+      function cb() {
+        console.log("after 2000");
+      }
+
+      if (obj.threshold === 2000) obj.registerCallback(cb);
+      else if (obj.threshold === 4000) obj.removeCallback();
     },
     [0, 2000, 4000, 6000]
+  );
+
+  useUpScrollEffect(
+    (obj) => {
+      console.log("index.js", obj.dir, obj.threshold);
+    },
+    [0, 2000]
   );
   return (
     <>

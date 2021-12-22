@@ -1,14 +1,19 @@
 import { useEffect, useState } from "react";
 import A1 from "@cmp/A1";
 import Ul from "@cmp/Ul";
-import { useScrollEffect } from "@useScrollEffect";
+import {
+  useScrollEffect,
+  useUpScrollEffect,
+  useYScrollEffect,
+} from "@useScrollEffect";
 
 function Header() {
   const [scrolled, setScrolled] = useState(false);
 
-  useScrollEffect(
+  useYScrollEffect(
     (obj) => {
-      setScrolled(true);
+      // console.log(obj);
+      setScrolled((old) => !old);
     },
     [2000]
   );
