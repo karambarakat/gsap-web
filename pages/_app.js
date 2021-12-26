@@ -69,7 +69,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <ScrollProvider>
+        <ScrollProvider percent={0}>
           <Component {...pageProps} />
         </ScrollProvider>
       </ThemeProvider>

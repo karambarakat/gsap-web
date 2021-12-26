@@ -1,34 +1,15 @@
-import H from "@cmp/H";
+import Btn1 from "@cmp/Btn1";
+import H1_ from "@cmp/H1";
 import Header from "@cmp/Header";
-import {
-  useDownScrollEffect,
-  useScrollEffect,
-  useUpScrollEffect,
-} from "@useScrollEffect";
+// import {
+//   useDownScrollEffect,
+//   useScrollEffect,
+//   useUpScrollEffect,
+// } from "@useScrollEffect";
 import Head from "next/head";
-import Image from "next/image";
+// import Image from "next/image";
 
 export default function Home() {
-  useScrollEffect(
-    (obj) => {
-      console.log("index.js", obj.dir, obj.threshold);
-
-      function cb() {
-        console.log("after 2000");
-      }
-
-      if (obj.threshold === 2000) obj.registerCallback(cb);
-      else if (obj.threshold === 4000) obj.removeCallback();
-    },
-    [0, 2000, 4000, 6000]
-  );
-
-  useUpScrollEffect(
-    (obj) => {
-      console.log("index.js", obj.dir, obj.threshold);
-    },
-    [0, 2000]
-  );
   return (
     <>
       <Head>
@@ -38,9 +19,21 @@ export default function Home() {
       </Head>
 
       <Header></Header>
-      <H
-        text={["it takes 7 seconds", "to make an impression", "we do it in 5"]}
-      />
+
+      <H1_>
+        {["it takes 7 seconds", "to make an impression", "we do it in 5"]}
+      </H1_>
+
+      <div
+        sx={{
+          marginTop: "-50vh",
+          marginBottom: "30vh",
+          "> *": { margin: "auto" },
+        }}
+      >
+        <Btn1>{["PLAY", "FULL"]}</Btn1>
+      </div>
+
       <p sx={{ textAlign: "center", width: "2rem", margin: "auto" }}>
         Occaecat est deserunt consectetur ipsum esse adipisicing excepteur.
         Laborum occaecat est do ad esse ipsum ullamco incididunt dolor quis

@@ -11,11 +11,10 @@ function Header() {
   const [scrolled, setScrolled] = useState(false);
 
   useYScrollEffect(
-    (obj) => {
-      // console.log(obj);
-      setScrolled((old) => !old);
+    ({ dir }) => {
+      setScrolled(dir !== "up");
     },
-    [2000]
+    [500]
   );
 
   return (
@@ -31,12 +30,14 @@ function Header() {
         alignItems: "center",
         gridTemplateColumns: "repeat(4, 1fr)",
         gap: 5,
+        zIndex: 900,
         "::before": {
           content: '""',
           borderBottom: ({ colors }) => `1px solid ${colors.primary}`,
           bg: "base",
           position: "absolute",
-          top: 0,
+          top: -1,
+          zIndex: 0,
           height: scrolled ? "100%" : "0%",
           transition: "height 0.5s ease-in-out",
           left: 0,
