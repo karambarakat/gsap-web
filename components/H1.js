@@ -13,7 +13,7 @@ function H1_({ children }) {
     (obj) => {
       setFixed(obj.dir === "up");
     },
-    [1000]
+    [1600]
   );
 
   useEffect(() => {
@@ -48,47 +48,40 @@ function H1_({ children }) {
   }, []);
 
   return (
-    <>
+    <div
+      sx={{
+        textAlign: "center",
+        // minHeight: "100vh",
+        display: "grid",
+        // position: fixed ? "fixed" : "absolute",
+        // transform: fixed ? "translateY(0px)" : "translateY(1600px)",
+        // top: 0,
+        // left: 0,
+        // right: 0,
+        placeContent: "center",
+      }}
+    >
       <div
+        ref={ref}
         sx={{
-          minHeight: "100vh",
-        }}
-      ></div>
-      <div
-        sx={{
-          textAlign: "center",
-          minHeight: "100vh",
-          display: "grid",
-          position: fixed ? "fixed" : "absolute",
-          transform: fixed ? "translateY(0px)" : "translateY(1000px)",
-          top: 0,
-          left: 0,
-          right: 0,
-          placeContent: "center",
+          transition: `height 2s ${snap}`,
+          overflow: "hidden",
+          zIndex: -1,
+          " > *": {
+            transform: "rotateX(90deg)",
+            transition: `transform 3s ${snap}`,
+          },
+          " > .triggered": {
+            transform: "rotateX(0deg)",
+            display: "block",
+          },
         }}
       >
-        <div
-          ref={ref}
-          sx={{
-            transition: `height 2s ${snap}`,
-            overflow: "hidden",
-            zIndex: -1,
-            " > *": {
-              transform: "rotateX(90deg)",
-              transition: `transform 3s ${snap}`,
-            },
-            " > .triggered": {
-              transform: "rotateX(0deg)",
-              display: "block",
-            },
-          }}
-        >
-          <h1>{children[0]}</h1>
-          <h1>{children[1]}</h1>
-          <h1>{children[2]}</h1>
-        </div>
+        <h1>{children[0]}</h1>
+        <h1>{children[1]}</h1>
+        <h1>{children[2]}</h1>
       </div>
-    </>
+    </div>
   );
 }
 

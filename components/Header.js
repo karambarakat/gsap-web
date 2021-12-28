@@ -20,9 +20,8 @@ function Header() {
   return (
     <div
       sx={{
-        py: 3,
-        mx: 3,
-        position: "fixed",
+        p: 3,
+        position: "relative",
         top: 0,
         right: 0,
         left: 0,
@@ -31,23 +30,31 @@ function Header() {
         gridTemplateColumns: "repeat(4, 1fr)",
         gap: 5,
         zIndex: 900,
-        "::before": {
-          content: '""',
-          borderBottom: ({ colors }) => `1px solid ${colors.primary}`,
-          bg: "base",
-          position: "absolute",
-          top: -1,
-          zIndex: 0,
-          height: scrolled ? "100%" : "0%",
-          transition: "height 0.5s ease-in-out",
-          left: 0,
-          right: 0,
-        },
-        ">*": {
-          zIndex: 100,
-        },
       }}
     >
+      <div
+        sx={{
+          bg: "base",
+          position: "absolute",
+          top: 0,
+          left: 0,
+          right: 0,
+          zIndex: -1,
+
+          ":before": {
+            content: '""',
+            mx: 3,
+            position: "absolute",
+            top: -1,
+            bottom: 0,
+            right: 0,
+            left: 0,
+            borderBottom: ({ colors }) => `1px solid ${colors.primary}`,
+          },
+          height: scrolled ? "100%" : "0px",
+          transition: "height 0.5s ease-in-out",
+        }}
+      ></div>
       <Ul>
         <A1 href="#">EN</A1>
         <A1 href="#">FR</A1>

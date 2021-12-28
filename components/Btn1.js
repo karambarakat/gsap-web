@@ -20,29 +20,27 @@ function Btn1(props) {
         ":hover": {
           bg: "base",
           "> *": {
-            height: 0,
-          },
-        },
-        "> *": {
-          transition: `height 0.2s ${snap} var(--transition-delay)`,
-          height: 50,
-          marginTop: 10,
-          "--transition-delay": "0s",
-          ":first-child": {
-            "--transition-delay": "0.1s",
+            height: 0, //set to 50 for each child of this `button`
           },
         },
       }}
     >
-      {(props.children || []).map((word, i) => (
+      {(props.children || []).map((child, i) => (
         <span
           sx={{
             display: "flex",
             flexDirection: "column-reverse",
+            transition: `height 0.2s ${snap} var(--transition-delay)`,
+            height: 50,
+            marginTop: 10,
+            "--transition-delay": "0s",
+            ":first-child": {
+              "--transition-delay": "0.1s",
+            },
           }}
           key={i}
         >
-          {word}
+          {child}
         </span>
       ))}
     </button>
