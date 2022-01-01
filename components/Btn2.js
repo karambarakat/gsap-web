@@ -25,7 +25,6 @@ function Btn2({ children }) {
       }}
     >
       <svg
-        class="o-button__circle"
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
         // xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -37,7 +36,6 @@ function Btn2({ children }) {
         // xml:space="preserve"
       >
         <path
-          class="st0"
           d="M60.4,52.1c-5.8,8.6-15.6,14.3-26.8,14.3C15.7,66.3,1.2,51.9,1.2,34S15.7,1.7,33.6,1.7
 	c10.4,0,19.6,4.9,25.6,12.5"
         ></path>

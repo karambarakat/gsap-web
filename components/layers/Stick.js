@@ -1,11 +1,12 @@
 import { useYScrollEffect } from "@lib/useScrollEffect";
 import { useState } from "react";
 
-function LayerStick({
+function Stick({
   children,
   zi = 1,
   positioning = { top: 0, right: 0, left: 0 },
   ss = {},
+  stickOn = 0,
 }) {
   const [fixed, setFixed] = useState(true);
 
@@ -13,7 +14,7 @@ function LayerStick({
     (obj) => {
       setFixed(obj.dir === "up");
     },
-    [1600] //todo: I have to make this component have dynamic start and end point
+    [stickOn]
   );
 
   return (
@@ -22,7 +23,7 @@ function LayerStick({
         //make multi line
         zIndex: zi,
         position: fixed ? "fixed" : "absolute",
-        transform: fixed ? "translateY(0px)" : "translateY(1600px)",
+        transform: fixed ? "translateY(0px)" : `translateY(${stickOn}px)`,
         ...positioning,
         ...ss,
       }}
@@ -32,4 +33,4 @@ function LayerStick({
   );
 }
 
-export default LayerStick;
+export default Stick;

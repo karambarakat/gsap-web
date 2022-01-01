@@ -1,5 +1,4 @@
 import Btn2 from "./Btn2";
-import LayerRelative from "./layers/LayerRelative";
 
 function Section1() {
   return (
@@ -28,7 +27,7 @@ function Section1() {
         }}
       >
         <div sx={{ overflow: "hidden", height: 700 }}>
-          <video src="/media/5S REEL 2020.mp4"></video>
+          {/* <video src="/media/5S REEL 2020.mp4"></video> */}
         </div>
         <div sx={{ pl: 5 }}>
           <p sx={{ variant: "text.body1" }}>
