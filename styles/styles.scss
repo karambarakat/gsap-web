@@ -1,0 +1,39 @@
+@mixin h1 {
+  @include media-sm {
+    font-size: space(6);
+  }
+  @include media-md {
+    font-size: space(8);
+  }
+  @include media-lg {
+    font-size: space(9);
+  }
+  @include media-xl {
+    font-size: calc(space(8) + 2vw);
+  }
+  font-family: $serif;
+  font-weight: 300;
+}
+
+@mixin body1 {
+  font-size: 1.5rem;
+  @include media-sm {
+    font-size: 1.2rem;
+  }
+  font-family: $sanSerif;
+  font-weight: 400;
+}
+
+@mixin body2 {
+  font-size: 1rem;
+  font-family: $sanSerif;
+  font-weight: 100;
+  letter-spacing: 1px;
+}
+
+@mixin body3 {
+  font-size: 12px;
+  font-family: $sanSerif;
+  font-weight: 200;
+  letter-spacing: 1px;
+}

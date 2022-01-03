@@ -1,7 +1,7 @@
 @import "../styles/vars.scss";
 
 .header {
-  padding: space(3);
+  padding: $yPadding $xPadding;
   position: relative;
   top: 0;
   right: 0;
@@ -11,6 +11,50 @@
   grid-template-columns: repeat(4, 1fr);
   gap: space(5);
   z-index: 900;
+}
+
+.language {
+  display: none;
+  @include media-lg {
+    display: flex;
+  }
+}
+
+.languageSm {
+  display: flex;
+  position: fixed;
+  z-index: 100;
+  right: calc($xPadding + space(2));
+  bottom: $yPadding;
+  transform: rotate(90deg);
+  transform-origin: center right;
+  @include media-lg {
+    display: none;
+  }
+}
+
+.navigation {
+  grid-column: span 4;
+  @include media-lg {
+    grid-column: span 2;
+  }
+}
+.nav_ul {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+  justify-content: space-between;
+  @include media-lg {
+    grid-template-columns: repeat(6, auto);
+    justify-content: start;
+  }
+}
+
+.title {
+  text-align: right;
+  display: none;
+  @include media-lg {
+    display: inherit;
+  }
 }
 
 .curtain {
@@ -23,8 +67,8 @@
 
   &::before {
     content: "";
-    margin-left: space(3);
-    margin-right: space(3);
+    margin-left: $xPadding;
+    margin-right: $xPadding;
     position: absolute;
     top: -1;
     bottom: 0;

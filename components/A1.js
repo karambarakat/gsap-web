@@ -3,7 +3,7 @@ import s from "./A1.module.scss";
 function A1(props) {
   return (
     <a {...props} className={[s.a, props.className].join(" ")}>
-      {props.children}
+      <span className={s.span}>{props.children}</span>
       <svg
         x="0px"
         y="0px"

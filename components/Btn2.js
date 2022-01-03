@@ -10,8 +10,6 @@ function Btn2({ children }) {
         // xmlns:xlink="http://www.w3.org/1999/xlink"
         x="0px"
         y="0px"
-        width="68px"
-        height="68px"
         viewBox="0 0 68 68"
         // xml:space="preserve"
       >

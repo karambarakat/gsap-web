@@ -6,8 +6,13 @@
   align-items: center;
   justify-content: center;
   gap: space(2);
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
+
+  @include media-lg {
+    width: 300px;
+    height: 300px;
+  }
   border-radius: 100%;
   border: 1px solid color(primary);
   color: color(primary);

@@ -1,17 +1,21 @@
+import Aspect from "./Aspect";
 import Btn2 from "./Btn2";
 import s from "./Section1.module.scss";
 
 function Section1() {
   return (
     <section className={s.section}>
-      {/* <LayerRelative zi={-1}> */}
-      <div dangerouslySetInnerHTML={{ __html: "<!-- first quarter -->" }}></div>
-      {/* </LayerRelative> */}
-      {/* <LayerRelative zi={30}> */}
+      <div className={s.third1} />
       <div className={s.thirds2}>
-        <div className={s.video}>
-          {/* <video src="/media/5S REEL 2020.mp4"></video> */}
-        </div>
+        <Aspect className={s.aspect} a="9/16">
+          <video
+            muted
+            playsInline
+            autoPlay
+            loop
+            src="./media/5S REEL 2020.mp4"
+          ></video>
+        </Aspect>
         <div className={s.text}>
           <p className="body1">
             5S IS A CREATIVE STUDIO BORN AND BRED IN MONTREAL. OUR APPROACH

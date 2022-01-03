@@ -1,6 +1,8 @@
 .ul {
   list-style: none;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr repeat(auto-fill, auto 1fr);
+  // align-content: ;
   align-items: center;
   gap: 0.3rem;
 }

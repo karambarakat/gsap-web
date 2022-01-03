@@ -1,26 +1,57 @@
 @import "../styles/vars.scss";
+@import "../styles/styles.scss";
 
 .btn {
+  @include body1;
+  cursor: pointer;
   background-color: transparent;
   border: none;
   color: color(primary);
+  position: relative;
   &:hover {
-    transform: scale3D(0, 1, 1);
-    span {
-      &::before {
-        transform: scale3D(1, 1, 1);
-      }
+    ::after {
+      width: 100%;
+    }
+    path {
+      stroke-dashoffset: -164;
     }
   }
-  span {
-    position: relative;
-    &::before {
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      content: "";
-      transform: scale3D(0, 1, 1);
-      transition: transform 0.2s $snap-tf;
+  ::after {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    right: 0;
+    width: 00%;
+    transition: width 0.6s $snap-tf;
+    height: 1px;
+    background-color: color(primary);
+  }
+  svg {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    left: 0;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    fill: none;
+    path {
+      stroke-width: 1px;
+      stroke-dasharray: 164;
+      stroke-dashoffset: 0;
+      transition: stroke-dashoffset 0.6s $snap-tf;
+      stroke: color(primary);
+      color: transparent;
     }
   }
+  // span {
+  //   position: relative;
+  //   &::before {
+  //     position: absolute;
+  //     bottom: 0;
+  //     right: 0;
+  //     content: "";
+  //     transform: scale3D(0, 1, 1);
+  //     transition: transform 0.2s $snap-tf;
+  //   }
+  // }
 }

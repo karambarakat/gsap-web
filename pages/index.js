@@ -1,6 +1,6 @@
 import Btn1 from "@cmp/Btn1";
 import H1_ from "@cmp/H1";
-import Header from "@cmp/Header";
+import Header, { HeaderSm } from "@cmp/Header";
 import Stick from "@cmp/layers/Stick";
 import s from "./index.module.scss";
 
@@ -25,6 +25,7 @@ export default function Home() {
       <div className={s.z100}>
         <Header></Header>
       </div>
+      <HeaderSm />
 
       <div className={s.vh100}> </div>
 

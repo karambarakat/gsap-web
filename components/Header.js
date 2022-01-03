@@ -19,24 +19,34 @@ function Header() {
       <div
         style={{ height: scrolled ? "100%" : "0px" }}
         className={s.curtain}
-      ></div>
-      <Ul>
+      />
+
+      <Ul className={s.language}>
         <A1 href="#">EN</A1>
         <A1 href="#">FR</A1>
       </Ul>
 
-      <div style={{ gridColumn: "span 2" }}>
-        <Ul>
+      <nav className={s.navigation}>
+        <Ul className={s.nav_ul}>
           <A1 href="#">WORK</A1>
           <A1 href="#">ABOUT</A1>
           <A1 href="#">CONTACT</A1>
         </Ul>
-      </div>
-      {/* <div>nav</div> */}
-      <a href="#" style={{ textAlign: "right" }}>
-        5S IS A CREATIVE STUDIO.
+      </nav>
+
+      <a href="#" className={s.title}>
+        A CREATIVE STUDIO.
       </a>
     </div>
+  );
+}
+
+export function HeaderSm() {
+  return (
+    <Ul className={s.languageSm}>
+      <A1 href="#">EN</A1>
+      <A1 href="#">FR</A1>
+    </Ul>
   );
 }
 

@@ -11,7 +11,11 @@ function H1_({ children }) {
   useEffect(() => {
     if (!ref.current) return;
 
-    animate(ref.current);
+    const cnt = { continue: true };
+
+    animate(ref.current, cnt);
+
+    return () => (cnt.continue = false);
   }, []);
 
   return (
@@ -25,23 +29,31 @@ function H1_({ children }) {
   );
 }
 
-async function animate(element) {
+async function animate(element, obj) {
+  //todo: this waitFor breaks the function when
+  // useEffect return called but it is untested
+  async function waitFor_(ms) {
+    await waitFor(ms);
+    if (!obj.continue) throw new Error();
+  }
+
   try {
     const offsetHeight = element.offsetHeight / 3;
     element.style.height = `${offsetHeight}px`;
 
     element.children[0].classList.add(s.triggered);
-    await waitFor(600);
+    await waitFor_(600);
     element.style.height = `${offsetHeight * 2}px`;
-    await waitFor(100);
+    await waitFor_(100);
 
     element.children[1].classList.add(s.triggered);
-    await waitFor(600);
+    await waitFor_(600);
     element.style.height = `${offsetHeight * 3}px`;
-    await waitFor(100);
+    await waitFor_(100);
 
     element.children[2].classList.add(s.triggered);
-    await waitFor(600);
+    await waitFor_(1000);
+    element.style.height = "auto";
   } catch (e) {}
 }
 
