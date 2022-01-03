@@ -1,18 +1,92 @@
-$half: 45vh;
+@import "../styles/vars.scss";
+$half: 30vh;
 
-.grabNStick {
-  z-index: 70;
-  display: grid;
-  padding-top: $half;
-  place-content: center;
+.section {
+  margin: 0 $xPadding;
+  position: relative;
 }
 
-.push {
+//todo: rotate the see more btn
+.seeMore {
+  //   width: 150px;
+  //   height: 150px;
+  position: absolute;
+  left: $xPadding;
+  bottom: calc($half / 3);
+  //   &:hover {
+  //     > * {
+  //       transform: rotate(90deg);
+  //       transform-origin: left center;
+  //     }
+  //   }
+  //   > * {
+  //     position: absolute;
+  //     top: 70px;
+  //     left: 0;
+  //     transition: transform 0.6s $snap-tf;
+  //   }
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stick {
   padding-top: $half;
+  @include media-sm {
+    position: static !important;
+  }
+}
+
+.holdPlace {
+  padding-top: $half;
+  position: relative;
+  z-index: -600;
   opacity: 0;
+  @include media-sm {
+    display: none;
+  }
 }
 
 .grid {
-  display: "grid";
-  grid-template-columns: "1fr 1fr";
+  display: grid;
+  padding-top: calc($half / 2);
+  padding-bottom: $half;
+  gap: space(7);
+  @include media-sm {
+    grid-template-columns: 1fr;
+  }
+  @include media-md {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.grid > :nth-child(1) {
+  @include media-lg {
+    transform: scale(0.85) translate(-33px, -73px);
+  }
+}
+
+.grid > :nth-child(2) {
+  @include media-lg {
+    transform: scale(1) translate(23px, 96px);
+  }
+}
+
+.grid > :nth-child(3) {
+  @include media-lg {
+    transform: scale(0.9) translate(-16px, -50px);
+  }
+}
+.grid > :nth-child(4) {
+  @include media-lg {
+    transform: scale(0.75) translate(-105px, -50px);
+  }
+}
+.grid > :nth-child(5) {
+  @include media-lg {
+    transform: scale(1.35) translate(180px, 13px);
+  }
 }

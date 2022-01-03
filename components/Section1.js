@@ -7,15 +7,17 @@ function Section1() {
     <section className={s.section}>
       <div className={s.third1} />
       <div className={s.thirds2}>
-        <Aspect className={s.aspect} a="9/16">
-          <video
-            muted
-            playsInline
-            autoPlay
-            loop
-            src="./media/5S REEL 2020.mp4"
-          ></video>
-        </Aspect>
+        <div className={s.aspect}>
+          <Aspect a={150}>
+            <video
+              muted
+              playsInline
+              autoPlay
+              loop
+              src="./media/5S REEL 2020.mp4"
+            ></video>
+          </Aspect>
+        </div>
         <div className={s.text}>
           <p className="body1">
             5S IS A CREATIVE STUDIO BORN AND BRED IN MONTREAL. OUR APPROACH

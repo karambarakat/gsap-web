@@ -125,7 +125,6 @@ GrabStick.propTypes = {
 
 GrabStick.defaultProps = {
   stickOn: ["after", 500],
-  props: {},
 };
 
 export default GrabStick;

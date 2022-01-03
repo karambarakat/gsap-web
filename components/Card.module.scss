@@ -1,0 +1,10 @@
+@import "../styles/vars.scss";
+
+.card {
+  border-bottom: 1px solid color(primary);
+}
+
+.span {
+  display: block;
+  margin: space(4);
+}

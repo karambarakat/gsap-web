@@ -1,9 +1,9 @@
 import { snap } from "@lib/timeFunction";
 import s from "./Btn2.module.scss";
 
-function Btn2({ children }) {
+function Btn2({ children, className, ...props }) {
   return (
-    <button className={s.btn}>
+    <button {...props} className={[s.btn, className].join(" ")}>
       <svg
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"

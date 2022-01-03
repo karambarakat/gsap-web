@@ -36,8 +36,9 @@
 }
 
 .aspect {
+  align-self: flex-start;
   @include media-sm {
-    padding-top: 80vh !important;
+    max-height: 80vh !important;
   }
 }
 

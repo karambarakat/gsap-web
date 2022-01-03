@@ -1,21 +1,9 @@
 import s from "./Aspect.module.scss";
 import PropTypes from "prop-types";
 
-function Aspect({ children, a = "16/9", className, ...props }) {
-  if (!a.includes("/") || a.split("/").some((e) => !Number(e))) {
-    console.log('props `a` has to be in form of "<x>/<y>"');
-    a = "16/9";
-  }
-
-  a = a.split("/").map((e) => Number(e));
-  a = (a[1] / a[0]) * 100;
-
+function Aspect({ children, a = 100, className, ...props }) {
   return (
-    <div
-      {...props}
-      className={[s.main, className].join(" ")}
-      style={{ paddingTop: `${a}%` }}
-    >
+    <div {...props} className={s.main} style={{ paddingTop: `${a}%` }}>
       {children}
     </div>
   );
@@ -24,9 +12,9 @@ function Aspect({ children, a = "16/9", className, ...props }) {
 Aspect.propTypes = {
   children: PropTypes.node,
   /**
-   * string in form of "<w>/<h>"
+   * number where 100 means square
    */
-  a: PropTypes.string,
+  a: PropTypes.number,
 };
 
 export default Aspect;
