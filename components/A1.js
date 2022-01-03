@@ -1,32 +1,8 @@
+import s from "./A1.module.scss";
+
 function A1(props) {
   return (
-    <a
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        svg: {
-          marginBottom: "-10px",
-          marginTop: "2px",
-          fill: "none",
-          strokeWidth: 2,
-          stroke: "primaryFocus",
-          path: {
-            strokeDasharray: 300,
-            strokeDashoffset: 300,
-            transition: "stroke-dashoffset 1s linear",
-          },
-        },
-        ":hover": {
-          svg: {
-            path: {
-              strokeDashoffset: 0,
-            },
-          },
-        },
-      }}
-      {...props}
-    >
+    <a {...props} className={[s.a, props.className].join(" ")}>
       {props.children}
       <svg
         x="0px"

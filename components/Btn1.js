@@ -1,45 +1,12 @@
 import { snap } from "@lib/timeFunction";
 import propTypes from "prop-types";
+import s from "./Btn1.module.scss";
 
 function Btn1(props) {
   return (
-    <button
-      sx={{
-        cursor: "pointer",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        gap: 2,
-        width: 300,
-        height: 300,
-        borderRadius: "100%",
-        border: ({ colors }) => `1px solid ${colors.primary}`,
-        color: ({ colors }) => colors.primary,
-        bg: "transparent",
-        transition: `background 0.2s ${snap}`,
-        ":hover": {
-          bg: "base",
-          "> *": {
-            height: 0, //set to 50 for each child of this `button`
-          },
-        },
-      }}
-    >
+    <button className={s.parent}>
       {(props.children || []).map((child, i) => (
-        <span
-          sx={{
-            display: "flex",
-            flexDirection: "column-reverse",
-            transition: `height 0.2s ${snap} var(--transition-delay)`,
-            height: 50,
-            marginTop: 10,
-            "--transition-delay": "0s",
-            ":first-child": {
-              "--transition-delay": "0.1s",
-            },
-          }}
-          key={i}
-        >
+        <span className={s.child} key={i}>
           {child}
         </span>
       ))}

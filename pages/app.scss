@@ -1,0 +1,73 @@
+@import "../styles/vars.scss";
+
+$serif: "Perpetua Titling MT", Georgia, "Times New Roman", Times, serif;
+$sanSerif: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
+  Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+
+:root {
+  @include setColors();
+  color: color(text);
+  background-color: color("background");
+
+  font-size: 1rem;
+  font-family: $sanSerif;
+  font-weight: 100;
+  letter-spacing: 1px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.h1,
+h1 {
+  // font-size: [ "30px", "36px", "46px", "calc(64px + 1vw)" ];
+  @include media-sm-only {
+    font-size: 30px;
+  }
+  @include media-md-up {
+    font-size: 36px;
+  }
+  @include media-lg-up {
+    font-size: 46px;
+  }
+  @include media-xl-up {
+    font-size: calc(64px + 1vw);
+  }
+  font-family: $serif;
+  font-weight: 300;
+}
+
+.body1 {
+  font-size: 2rem;
+  font-family: $sanSerif;
+  font-weight: 400;
+}
+
+.body2 {
+  font-size: 1rem;
+  font-family: $sanSerif;
+  font-weight: 100;
+  letter-spacing: 1px;
+}
+
+.body3 {
+  font-size: 12px;
+  font-family: $sanSerif;
+  font-weight: 200;
+  letter-spacing: 1px;
+}
+
+p {
+  @extend .body2;
+}
+
+a {
+  @extend .body3;
+  color: color(primary);
+  text-decoration: none;
+  &:hover {
+    color: color(primaryFocus);
+  }
+}

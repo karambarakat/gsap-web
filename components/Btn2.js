@@ -1,29 +1,9 @@
 import { snap } from "@lib/timeFunction";
+import s from "./Btn2.module.scss";
 
 function Btn2({ children }) {
   return (
-    <button
-      sx={{
-        bg: "transparent",
-        border: "none",
-        color: "primary",
-        ":hover": {
-          transform: "scale3D(0,1,1)",
-          span: { "::before": { transform: "scale3D(1,1,1)" } },
-        },
-        span: {
-          position: "relative",
-          "::before": {
-            position: "absolute",
-            bottom: 0,
-            right: 0,
-            content: '""',
-            transform: "scale3D(0,1,1)",
-            transition: `transform 0.2s ${snap}`,
-          },
-        },
-      }}
-    >
+    <button className={s.btn}>
       <svg
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"

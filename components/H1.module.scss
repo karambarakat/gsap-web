@@ -1,0 +1,22 @@
+@import "../styles/vars.scss";
+
+.center {
+  text-align: "center";
+  display: "grid";
+  place-content: "center";
+}
+
+.container {
+  text-align: center;
+  transition: height 2s $snap-tf;
+  overflow: hidden;
+  z-index: -1;
+  > * {
+    transform: rotateX(90deg);
+    transition: transform 3s $snap-tf;
+  }
+  .triggered {
+    transform: rotateX(0deg);
+    display: block;
+  }
+}

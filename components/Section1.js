@@ -1,36 +1,19 @@
 import Btn2 from "./Btn2";
+import s from "./Section1.module.scss";
 
 function Section1() {
   return (
-    <section
-      sx={{
-        borderBottom: ({ colors }) => `1px solid ${colors.primary}`,
-        display: "grid",
-        alignItems: "center",
-        gridTemplateColumns: "repeat(4, 1fr)",
-        gap: "64px",
-      }}
-    >
+    <section className={s.section}>
       {/* <LayerRelative zi={-1}> */}
       <div dangerouslySetInnerHTML={{ __html: "<!-- first quarter -->" }}></div>
       {/* </LayerRelative> */}
       {/* <LayerRelative zi={30}> */}
-      <div
-        sx={{
-          bg: "base",
-          gridColumn: "span 3",
-          borderTop: ({ colors }) => `1px solid ${colors.primary}`,
-
-          display: "grid",
-          alignItems: "center",
-          gridTemplateColumns: "repeat(2, 1fr)",
-        }}
-      >
-        <div sx={{ overflow: "hidden", height: 700 }}>
+      <div className={s.thirds2}>
+        <div className={s.video}>
           {/* <video src="/media/5S REEL 2020.mp4"></video> */}
         </div>
-        <div sx={{ pl: 5 }}>
-          <p sx={{ variant: "text.body1" }}>
+        <div className={s.text}>
+          <p className="body1">
             5S IS A CREATIVE STUDIO BORN AND BRED IN MONTREAL. OUR APPROACH
             INFUSES STRATEGIC INSIGHT INTO STORYTELLING FOR BRANDS AND AGENCIES
             SEEKING TO STAND OUT.

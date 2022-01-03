@@ -2,20 +2,16 @@ import Btn1 from "@cmp/Btn1";
 import H1_ from "@cmp/H1";
 import Header from "@cmp/Header";
 import Stick from "@cmp/layers/Stick";
-import GrabStick from "@cmp/layers/GrabStick";
+import s from "./index.module.scss";
 
 /* //todo: I wanted to put this LayerRelative 
   inside of Section1 but there was a bug with the 
   video tag "uncomment the inside RealtiveLayer" */
 
 import Section1 from "@cmp/Section1";
-// import {
-//   useDownScrollEffect,
-//   useScrollEffect,
-//   useUpScrollEffect,
-// } from "@useScrollEffect";
+
 import Head from "next/head";
-// import Image from "next/image";
+import Section2 from "@cmp/Section2";
 
 export default function Home() {
   return (
@@ -26,102 +22,31 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div sx={{ position: "fixed", zIndex: 100 }}>
+      <div className={s.z100}>
         <Header></Header>
       </div>
 
-      <div sx={{ minHeight: "100vh" }}> </div>
-      <Stick
-        stickOn={1600}
-        zi={10}
-        ss={{ minHeight: "100vh", placeContent: "center", display: "grid" }}
-      >
+      <div className={s.vh100}> </div>
+
+      <Stick stickOn={1600} className={[s.z10, s.initPos].join(" ")}>
         <H1_>
           {["it takes 7 seconds", "to make an impression", "we do it in 5"]}
         </H1_>
       </Stick>
 
-      <div
-        sx={{
-          zIndex: 20,
-          position: "relative",
-          marginTop: "-50vh",
-          marginBottom: "30vh",
-          "> *": { margin: "auto" },
-        }}
-      >
+      <div className={s.z20}>
         <Btn1>{["PLAY", "FULL"]}</Btn1>
       </div>
+      {/*// todo: stopped here: change from themeUI to plain css*/}
 
-      <div
-        sx={{
-          zIndex: 30,
-          position: "relative",
-        }}
-      >
+      <div className={s.z30}>
         <Section1 />
       </div>
-      <div sx={{ zIndex: 40, position: "relative", bg: "base" }}>
-        <p sx={{ textAlign: "center", width: "2rem", margin: "auto" }}>
-          Occaecat est deserunt consectetur ipsum esse adipisicing excepteur.
-          Laborum occaecat est do ad esse ipsum ullamco incididunt dolor quis
-          dolore Lorem exercitation. Do ea officia cupidatat laboris esse
-          consectetur magna ea labore. Ad id proident est dolore ipsum non
-          aliqua. Velit occaecat ex consectetur cupidatat reprehenderit nulla in
-          dolor amet fugiat ad sdipisicing excepteur. Laborum occaecat est do ad
-          esse ipsum ullamco incididunt dolor quis dolore Lorem exercitation. Do
-          ea officia cupidatat laboris esse consectetur magna ea labore. Ad id
-          proident est dolore ipsum non aliqua. Velit occaecat ex consectetur
-          cupidatat reprehenderit nulla in dolor amet fugiat ad sunt.
-        </p>
-      </div>
-      <GrabStick zi={70} stickOn={500}>
-        <div sx={{ marginTop: "200px" }}>
-          <h1>hello world</h1>
+
+      <div className={s.z40}>
+        <div>
+          <Section2 />
         </div>
-      </GrabStick>
-      <div sx={{ zIndex: 60, position: "relative", bg: "base" }}>
-        <p sx={{ textAlign: "center", width: "2rem", margin: "auto" }}>
-          Occaecat est deserunt consectetur ipsum esse adipisicing excepteur.
-          Laborum occaecat est do ad esse ipsum ullamco incididunt dolor quis
-          dolore Lorem exercitation. Do ea officia cupidatat laboris esse
-          consectetur magna ea labore. Ad id proident est dolore ipsum non
-          aliqua. Velit occaecat ex consectetur cupidatat reprehenderit nulla in
-          dolor amet fugiat ad sunt. Occaecat est deserunt consectetur ipsum
-          esse adipisicing excepteur. Laborum occaecat est do ad esse ipsum
-          ullamco incididunt dolor quis dolore Lorem exercitation. Do ea officia
-          cupidatat laboris esse consectetur magna ea labore. Ad id proident est
-          dolore ipsum non aliqua. Velit occaecat ex consectetur cupidatat
-          reprehenderit nulla in dolor amet fugiat ad sunt. Occaecat est
-          deserunt consectetur ipsum esse adipisicing excepteur. Laborum
-          occaecat est do ad esse ipsum ullamco incididunt dolor quis dolore
-          Lorem exercitation. Do ea officia cupidatat laboris esse consectetur
-          magna ea labore. Ad id proident est dolore ipsum non aliqua. Velit
-          occaecat ex consectetur cupidatat reprehenderit nulla in dolor amet
-          fugiat ad sunt. Occaecat est deserunt consectetur ipsum esse
-          adipisicing excepteur. Laborum occaecat est do ad esse ipsum ullamco
-          incididunt dolor quis dolore Lorem exercitation. Do ea officia
-          cupidatat laboris esse consectetur magna ea labore. Ad id proident est
-          dolore ipsum non aliqua. Velit occaecat ex consectetur cupidatat
-          reprehenderit nulla in dolor amet fugiat ad sunt. Occaecat est
-          deserunt consectetur ipsum esse adipisicing excepteur. Laborum
-          occaecat est do ad esse ipsum ullamco incididunt dolor quis dolore
-          Lorem exercitation. Do ea officia cupidatat laboris esse consectetur
-          magna ea labore. Ad id proident est dolore ipsum non aliqua. Velit
-          occaecat ex consectetur cupidatat reprehenderit nulla in dolor amet
-          fugiat ad sunt. Occaecat est deserunt consectetur ipsum esse
-          adipisicing excepteur. Laborum occaecat est do ad esse ipsum ullamco
-          incididunt dolor quis dolore Lorem exercitation. Do ea officia
-          cupidatat laboris esse consectetur magna ea labore. Ad id proident est
-          dolore ipsum non aliqua. Velit occaecat ex consectetur cupidatat
-          reprehenderit nulla in dolor amet fugiat ad sunt. Occaecat est
-          deserunt consectetur ipsum esse adipisicing excepteur. Laborum
-          occaecat est do ad esse ipsum ullamco incididunt dolor quis dolore
-          Lorem exercitation. Do ea officia cupidatat laboris esse consectetur
-          magna ea labore. Ad id proident est dolore ipsum non aliqua. Velit
-          occaecat ex consectetur cupidatat reprehenderit nulla in dolor amet
-          fugiat ad sunt.
-        </p>
       </div>
     </>
   );

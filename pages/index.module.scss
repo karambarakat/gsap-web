@@ -1,0 +1,46 @@
+.vh100 {
+  min-height: 100vh;
+}
+
+.initPos {
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+.z100 {
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.z10 {
+  min-height: 100vh;
+  place-content: center;
+  display: grid;
+  z-index: 10;
+}
+
+.z20 {
+  z-index: 20;
+  position: relative;
+  margin-top: -50vh;
+  margin-bottom: 30vh;
+  > * {
+    margin: auto;
+  }
+}
+
+.z30 {
+  position: relative;
+  z-index: 30;
+}
+
+.z40 {
+  display: grid;
+  > div {
+    z-index: 40;
+    background-color: var(--c-base);
+  }
+}

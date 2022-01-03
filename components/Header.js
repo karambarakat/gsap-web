@@ -1,11 +1,8 @@
 import { useEffect, useState } from "react";
 import A1 from "@cmp/A1";
 import Ul from "@cmp/Ul";
-import {
-  useScrollEffect,
-  useUpScrollEffect,
-  useYScrollEffect,
-} from "@useScrollEffect";
+import s from "./Header.module.scss";
+import { useYScrollEffect } from "@useScrollEffect";
 
 function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -18,49 +15,17 @@ function Header() {
   );
 
   return (
-    <div
-      sx={{
-        p: 3,
-        position: "relative",
-        top: 0,
-        right: 0,
-        left: 0,
-        display: "grid",
-        alignItems: "center",
-        gridTemplateColumns: "repeat(4, 1fr)",
-        gap: 5,
-        zIndex: 900,
-      }}
-    >
+    <div className={s.header}>
       <div
-        sx={{
-          bg: "base",
-          position: "absolute",
-          top: 0,
-          left: 0,
-          right: 0,
-          zIndex: -1,
-
-          ":before": {
-            content: '""',
-            mx: 3,
-            position: "absolute",
-            top: -1,
-            bottom: 0,
-            right: 0,
-            left: 0,
-            borderBottom: ({ colors }) => `1px solid ${colors.primary}`,
-          },
-          height: scrolled ? "100%" : "0px",
-          transition: "height 0.5s ease-in-out",
-        }}
+        style={{ height: scrolled ? "100%" : "0px" }}
+        className={s.curtain}
       ></div>
       <Ul>
         <A1 href="#">EN</A1>
         <A1 href="#">FR</A1>
       </Ul>
 
-      <div sx={{ gridColumn: "span 2" }}>
+      <div style={{ gridColumn: "span 2" }}>
         <Ul>
           <A1 href="#">WORK</A1>
           <A1 href="#">ABOUT</A1>
@@ -68,7 +33,7 @@ function Header() {
         </Ul>
       </div>
       {/* <div>nav</div> */}
-      <a href="#" sx={{ textAlign: "right" }}>
+      <a href="#" style={{ textAlign: "right" }}>
         5S IS A CREATIVE STUDIO.
       </a>
     </div>

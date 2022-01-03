@@ -1,0 +1,48 @@
+$breakpoint: 500px 700px 1000px;
+
+@mixin media-sm-only {
+  @media (max-width: 500px) {
+    @content;
+  }
+}
+@mixin media-md-up {
+  @media (min-width: 500px) {
+    @content;
+  }
+}
+@mixin media-lg-up {
+  @media (min-width: 700px) {
+    @content;
+  }
+}
+@mixin media-xl-up {
+  @media (min-width: 1000px) {
+    @content;
+  }
+}
+
+$spaces: 0, 4, 8, 16, 32, 64, 128, 256, 512;
+
+@function space($nth, $unit: px) {
+  @return nth($list: $spaces, $n: $nth + 1) + $unit;
+}
+
+$colors: (
+  primary: #a6d1c9,
+  primaryFocus: #d2fff6,
+  text: #a6d1c9,
+  base: #282b29,
+  background: #282b29,
+);
+
+@mixin setColors {
+  @each $key, $val in $colors {
+    --c-#{$key}: #{$val};
+  }
+}
+
+@function color($name) {
+  @return var(--c-#{$name});
+}
+
+$snap-tf: cubic-bezier(0.075, 0.82, 0.165, 1);

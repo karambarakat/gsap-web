@@ -1,0 +1,32 @@
+@import "../styles/vars.scss";
+
+.section {
+  border-bottom: 1px solid color(primary);
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 64px;
+}
+
+.thirds2 {
+  background-color: color("base");
+  grid-column: span 3;
+  border-top: 1px solid color(primary);
+
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.video {
+  overflow: hidden;
+  height: 700;
+}
+
+.text {
+  padding-left: space(5);
+  p {
+    //todo
+    //variant: text.body1
+  }
+}

@@ -1,13 +1,8 @@
+import s from "./Ul.module.scss";
+
 function Ul(props) {
   return (
-    <ul
-      sx={{
-        listStyle: "none",
-        display: "flex",
-        alignItems: "center",
-        gap: "0.3rem",
-      }}
-    >
+    <ul className={s.ul}>
       {props.children.map((e, i, l) => {
         return [
           <li key={i * 2}>{e}</li>,

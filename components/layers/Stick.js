@@ -1,13 +1,7 @@
 import { useYScrollEffect } from "@lib/useScrollEffect";
 import { useState } from "react";
 
-function Stick({
-  children,
-  zi = 1,
-  positioning = { top: 0, right: 0, left: 0 },
-  ss = {},
-  stickOn = 0,
-}) {
+function Stick({ children, stickOn = 0, ...props }) {
   const [fixed, setFixed] = useState(true);
 
   useYScrollEffect(
@@ -19,13 +13,10 @@ function Stick({
 
   return (
     <div
-      sx={{
-        //make multi line
-        zIndex: zi,
+      {...props}
+      style={{
         position: fixed ? "fixed" : "absolute",
         transform: fixed ? "translateY(0px)" : `translateY(${stickOn}px)`,
-        ...positioning,
-        ...ss,
       }}
     >
       {children}

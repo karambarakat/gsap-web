@@ -1,0 +1,26 @@
+@import "../styles/vars.scss";
+
+.btn {
+  background-color: transparent;
+  border: none;
+  color: color(primary);
+  &:hover {
+    transform: scale3D(0, 1, 1);
+    span {
+      &::before {
+        transform: scale3D(1, 1, 1);
+      }
+    }
+  }
+  span {
+    position: relative;
+    &::before {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      content: "";
+      transform: scale3D(0, 1, 1);
+      transition: transform 0.2s $snap-tf;
+    }
+  }
+}

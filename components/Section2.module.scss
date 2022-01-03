@@ -1,0 +1,18 @@
+$half: 45vh;
+
+.grabNStick {
+  z-index: 70;
+  display: grid;
+  padding-top: $half;
+  place-content: center;
+}
+
+.push {
+  padding-top: $half;
+  opacity: 0;
+}
+
+.grid {
+  display: "grid";
+  grid-template-columns: "1fr 1fr";
+}
