@@ -44,3 +44,8 @@
     background-color: var(--c-base);
   }
 }
+
+.z50 {
+  position: relative;
+  z-index: 50;
+}

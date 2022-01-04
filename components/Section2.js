@@ -8,7 +8,7 @@ function Section2() {
   return (
     <section className={s.section}>
       <div className={s.center}>
-        <GrabStick stickOn={1500} className={s.stick}>
+        <GrabStick stickOn={2000} className={s.stick}>
           <h1>PROJECTS THAT</h1>
           <h1>MAKE US BLUSH</h1>
         </GrabStick>
@@ -22,14 +22,14 @@ function Section2() {
         //todo: not completed
         className={s.grid}
       >
-        <Card title="Esse sint" imageSrc="/media/box (1).jpg"></Card>
-        <Card title="Lorem eu" imageSrc="/media/box (2).jpg"></Card>
-        <Card title="quis sunt" imageSrc="/media/box (3).jpg"></Card>
-        <Card title="consequat" imageSrc="/media/box (4).jpg"></Card>
-        <Card title="velit dolor" imageSrc="/media/box (5).jpg"></Card>
-      </div>
-      <div className={s.seeMore}>
-        <Btn2>SEE MORE</Btn2>
+        <Card title="Esse sint" imageSrc="/media/box1.jpg"></Card>
+        <Card title="Lorem eu" imageSrc="/media/box2.jpg"></Card>
+        <Card title="quis sunt" imageSrc="/media/box3.jpg"></Card>
+        <Card title="consequat" imageSrc="/media/box4.jpg"></Card>
+        <Card title="velit dolor" imageSrc="/media/box5.jpg"></Card>
+        <div className={s.seeMore}>
+          <Btn2>SEE MORE</Btn2>
+        </div>
       </div>
     </section>
   );

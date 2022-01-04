@@ -27,6 +27,18 @@ p {
   @include body1;
 }
 
+.body1 {
+  @include body1;
+}
+
+.body2 {
+  @include body2;
+}
+
+.body3 {
+  @include body3;
+}
+
 a {
   @include body3;
   color: color(primary);

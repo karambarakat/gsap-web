@@ -12,6 +12,7 @@ import Section1 from "@cmp/Section1";
 
 import Head from "next/head";
 import Section2 from "@cmp/Section2";
+import Section3 from "@cmp/Section3";
 
 export default function Home() {
   return (
@@ -48,6 +49,10 @@ export default function Home() {
         <div>
           <Section2 />
         </div>
+      </div>
+
+      <div className={s.z50}>
+        <Section3 />
       </div>
     </>
   );

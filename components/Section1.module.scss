@@ -38,7 +38,15 @@
 .aspect {
   align-self: flex-start;
   @include media-sm {
-    max-height: 80vh !important;
+    max-height: 85vh !important;
+    height: 85vh !important;
+    overflow: hidden;
+    position: relative;
+    > * {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+    }
   }
 }
 

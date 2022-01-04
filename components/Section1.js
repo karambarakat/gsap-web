@@ -8,15 +8,17 @@ function Section1() {
       <div className={s.third1} />
       <div className={s.thirds2}>
         <div className={s.aspect}>
-          <Aspect a={150}>
-            <video
-              muted
-              playsInline
-              autoPlay
-              loop
-              src="./media/5S REEL 2020.mp4"
-            ></video>
-          </Aspect>
+          <div>
+            <Aspect a={150}>
+              <video
+                muted
+                playsInline
+                autoPlay
+                loop
+                src="./media/Intro - Pexel.com.mp4"
+              ></video>
+            </Aspect>
+          </div>
         </div>
         <div className={s.text}>
           <p className="body1">

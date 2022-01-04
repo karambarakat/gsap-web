@@ -1,0 +1,57 @@
+@import "../styles/vars.scss";
+
+.section {
+  // border-bottom: 1px solid color(primary);
+  border-top: 1px solid color(primary);
+  margin: 0 2.5rem;
+  background-color: color(base);
+  @include media-lg {
+    padding-left: 25%;
+  }
+}
+
+.title {
+  padding: 2.5rem 0;
+}
+
+.brands {
+  border-top: 1px solid color(primary);
+  display: grid;
+  gap: 1px;
+  grid-template-columns: repeat(2, 1fr);
+  @include media-md {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @include media-lg {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  > :last-child {
+    @include media-md-only {
+      display: none;
+    }
+  }
+  background-color: color(primary);
+  > * {
+    background-color: color(base);
+    fill: color(primary);
+    padding: 2rem;
+  }
+}
+
+.meto {
+  border-top: 1px solid color(primary);
+  padding: 2.5rem 0;
+}
+
+.info {
+  border-top: 1px solid color(primary);
+  padding: 2.5rem 0;
+  display: grid;
+  gap: 2rem;
+  text-align: center;
+  grid-template-columns: repeat(1, 1fr);
+  @include media-md {
+    text-align: left;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
