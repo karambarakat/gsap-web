@@ -30,7 +30,7 @@ export default function Home() {
 
       <div className={s.vh100}> </div>
 
-      <Stick stickOn={1600} className={[s.z10, s.initPos].join(" ")}>
+      <Stick stickOn={1900} className={[s.z10, s.initPos].join(" ")}>
         <H1_>
           {["it takes 7 seconds", "to make an impression", "we do it in 5"]}
         </H1_>

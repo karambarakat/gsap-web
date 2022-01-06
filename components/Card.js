@@ -2,9 +2,9 @@ import Image from "next/image";
 import Aspect from "./Aspect";
 import s from "./Card.module.scss";
 
-function Card({ title, imageSrc }) {
+function Card({ title, imageSrc, ...props }) {
   return (
-    <div className={s.card}>
+    <div {...props} className={s.card}>
       <Aspect a={70}>
         <Image layout="fill" objectFit="cover" src={imageSrc}></Image>
       </Aspect>

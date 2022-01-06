@@ -29,7 +29,7 @@ $breakpoint: 500px 700px 1000px;
     @content;
   }
 }
-@mixin media-md-only {
+@mixin media-lg-only {
   @media (min-width: 1000px) and (max-width: 1299px) {
     @content;
   }

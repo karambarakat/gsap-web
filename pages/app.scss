@@ -47,3 +47,20 @@ a {
     color: color(primaryFocus);
   }
 }
+
+input {
+  @include body2;
+  background-color: color(base);
+  border: 1px solid color(primary);
+  padding: 1rem;
+  color: color(primary);
+  &:hover,
+  &:active,
+  &:focus {
+    border: 1px solid color(primaryFocus);
+    outline: none;
+    &[type="submit"] {
+      cursor: pointer;
+    }
+  }
+}

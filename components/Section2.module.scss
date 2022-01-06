@@ -68,30 +68,30 @@ $half: 30vh;
   }
 }
 
-.grid > :nth-child(1) {
-  @include media-lg {
-    transform: scale(0.85) translate(-33px, -73px);
-  }
-}
+// .grid > :nth-child(1) {
+//   @include media-lg {
+//     transform: scale(0.85) translate(-33px, -73px);
+//   }
+// }
 
-.grid > :nth-child(2) {
-  @include media-lg {
-    transform: scale(1) translate(23px, 96px);
-  }
-}
+// .grid > :nth-child(2) {
+//   @include media-lg {
+//     transform: scale(1) translate(23px, 96px);
+//   }
+// }
 
-.grid > :nth-child(3) {
-  @include media-lg {
-    transform: scale(0.9) translate(-16px, -50px);
-  }
-}
-.grid > :nth-child(4) {
-  @include media-lg {
-    transform: scale(0.75) translate(-105px, -50px);
-  }
-}
-.grid > :nth-child(5) {
-  @include media-lg {
-    transform: scale(1.35) translate(180px, 13px);
-  }
-}
+// .grid > :nth-child(3) {
+//   @include media-lg {
+//     transform: scale(0.9) translate(-16px, -50px);
+//   }
+// }
+// .grid > :nth-child(4) {
+//   @include media-lg {
+//     transform: scale(0.75) translate(-105px, -50px);
+//   }
+// }
+// .grid > :nth-child(5) {
+//   @include media-lg {
+//     transform: scale(1.35) translate(180px, 13px);
+//   }
+// }

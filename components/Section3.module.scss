@@ -1,5 +1,19 @@
 @import "../styles/vars.scss";
 
+.newsletter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 0;
+  background-color: color(base);
+  margin: 0 2.5rem;
+  border-top: 1px solid color(primary);
+  gap: 2rem;
+  input[type="email"] {
+    width: 450px;
+  }
+}
+
 .section {
   // border-bottom: 1px solid color(primary);
   border-top: 1px solid color(primary);
@@ -25,16 +39,28 @@
   @include media-lg {
     grid-template-columns: repeat(4, 1fr);
   }
-  > :last-child {
-    @include media-md-only {
-      display: none;
-    }
-  }
+
   background-color: color(primary);
-  > * {
+
+  .brand {
     background-color: color(base);
     fill: color(primary);
-    padding: 2rem;
+    height: 0;
+    padding-top: 60%;
+    position: relative;
+    svg {
+      position: absolute;
+      top: 50%;
+      height: 30%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    &:last-child {
+      display: none;
+      @include media-md-only {
+        display: block;
+      }
+    }
   }
 }
 
