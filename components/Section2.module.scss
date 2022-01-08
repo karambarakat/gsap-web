@@ -66,6 +66,9 @@ $half: 30vh;
   @include media-md {
     grid-template-columns: 1fr 1fr;
   }
+  // > * {
+  //   position: absolute;
+  // }
 }
 
 // .grid > :nth-child(1) {
