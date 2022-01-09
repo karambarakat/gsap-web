@@ -12,7 +12,11 @@ function Card({ title, imageSrc, ...props }) {
           objectFit="cover"
           src={imageSrc}
         ></Image>
-        {/* <img src={imageSrc}></img> */}
+        <div className={s.after}>
+          <button>
+            <span className="body3">CLICK HERE</span>
+          </button>
+        </div>
       </Aspect>
       <span className={["body2", s.span].join(" ")}>{title}</span>
     </div>

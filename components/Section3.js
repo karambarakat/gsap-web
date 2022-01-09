@@ -1,3 +1,4 @@
+import Drop from "./Drop";
 import s from "./Section3.module.scss";
 import Lancome from "./svg/LANCOME";
 // import { ReactComponent as YourSvg } from "./svg/brand.svg";
@@ -5,11 +6,13 @@ import Lancome from "./svg/LANCOME";
 function Section3() {
   return (
     <>
-      <div className={s.newsletter}>
-        <h1>Newsletter</h1>
-        <input type={"email"} placeholder="enter you email"></input>
-        <input type={"submit"}></input>
-      </div>
+      <Drop>
+        <div className={s.newsletter}>
+          <h1>Newsletter</h1>
+          <input type={"email"} placeholder="enter you email"></input>
+          <input type={"submit"}></input>
+        </div>
+      </Drop>
       <section className={s.section}>
         <div className={[s.title, "body1"].join(" ")}>CLEINTS</div>
         <div className={s.brands}>

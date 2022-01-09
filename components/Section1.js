@@ -1,5 +1,6 @@
 import Aspect from "./Aspect";
 import Btn2 from "./Btn2";
+import Drop from "./Drop";
 import s from "./Section1.module.scss";
 
 function Section1() {
@@ -7,19 +8,21 @@ function Section1() {
     <section className={s.section}>
       <div className={s.third1} />
       <div className={s.thirds2}>
-        <div className={s.aspect}>
-          <div>
-            <Aspect a={150}>
-              <video
-                muted
-                playsInline
-                autoPlay
-                loop
-                src="./media/Intro - Pexel.com.mp4"
-              ></video>
-            </Aspect>
+        <Drop>
+          <div className={s.aspect}>
+            <div>
+              <Aspect a={150}>
+                <video
+                  muted
+                  playsInline
+                  autoPlay
+                  loop
+                  src="./media/Intro - Pexel.com.mp4"
+                ></video>
+              </Aspect>
+            </div>
           </div>
-        </div>
+        </Drop>
         <div className={s.text}>
           <p className="body1">
             5S IS A CREATIVE STUDIO BORN AND BRED IN MONTREAL. OUR APPROACH

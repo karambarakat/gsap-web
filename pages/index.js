@@ -37,7 +37,7 @@ export default function Home() {
       </Stick>
 
       <div className={s.z20}>
-        <Btn1>{["PLAY", "FULL"]}</Btn1>
+        <Btn1>{["CHANGE", "THEME"]}</Btn1>
       </div>
       {/*// todo: stopped here: change from themeUI to plain css*/}
 

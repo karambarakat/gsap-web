@@ -38,14 +38,17 @@ $half: 30vh;
 }
 
 .stick {
-  padding-top: $half;
+  padding-top: 12rem;
+  padding-bottom: 12rem;
   @include media-sm {
     position: static !important;
   }
 }
 
 .holdPlace {
-  padding-top: $half;
+  padding-top: 12rem;
+  padding-bottom: 12rem;
+
   position: relative;
   z-index: -600;
   opacity: 0;
@@ -56,7 +59,7 @@ $half: 30vh;
 
 .grid {
   display: grid;
-  padding-top: calc($half / 2);
+  // padding-top: calc($half / 2);
   padding-bottom: $half;
   gap: space(7);
   @include media-sm {

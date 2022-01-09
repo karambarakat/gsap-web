@@ -2,20 +2,20 @@
 
 @import "../styles/styles.scss";
 
+@import "../styles/animation.scss";
+
 .p-r {
   position: relative;
 }
 
 :root {
-  @include setColors();
-  color: color(text);
-  background-color: color("background");
-
   font-size: 1rem;
   font-family: $sanSerif;
   font-weight: 100;
   letter-spacing: 1px;
 }
+
+@include setColors();
 
 * {
   padding: 0;

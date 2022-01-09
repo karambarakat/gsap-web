@@ -58,18 +58,54 @@ $colors: (
   base: #282b29,
   background: #282b29,
 );
+$colors-theme1: (
+  primary: #b82927,
+  primaryFocus: #a01d19,
+  text: #b82927,
+  base: #a6d1c9,
+  background: #a6d1c9,
+);
+
+$colors-theme2: (
+  primary: #282b29,
+  primaryFocus: #161817,
+  text: #282b29,
+  base: #f4c4c4,
+  background: #f4c4c4,
+);
+
+$snap-tf: cubic-bezier(0.075, 0.82, 0.165, 1);
 
 @mixin setColors {
-  @each $key, $val in $colors {
-    --c-#{$key}: #{$val};
+  body {
+    color: color(text);
+    background-color: color("background");
+    transition: color 500ms $snap-tf, background-color 500ms $snap-tf;
+  }
+
+  body.theme0,
+  body {
+    @each $key, $val in $colors {
+      --c-#{$key}: #{$val};
+    }
+  }
+
+  body.theme1 {
+    @each $key, $val in $colors-theme1 {
+      --c-#{$key}: #{$val};
+    }
+  }
+
+  body.theme2 {
+    @each $key, $val in $colors-theme2 {
+      --c-#{$key}: #{$val};
+    }
   }
 }
 
 @function color($name) {
   @return var(--c-#{$name});
 }
-
-$snap-tf: cubic-bezier(0.075, 0.82, 0.165, 1);
 
 $xPadding: space(6);
 $yPadding: space(4);

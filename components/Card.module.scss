@@ -2,7 +2,32 @@
 
 .card {
   border-bottom: 1px solid color(primary);
-  // border: 2px solid black;
+  position: relative;
+
+  .after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: grid;
+    place-content: center;
+    button {
+      border: none;
+      transition: clip-path 0.3s $snap-tf;
+      cursor: pointer;
+      clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+      background-color: color(base);
+      color: color(primary);
+      padding: 0.25rem 0.7rem;
+    }
+  }
+
+  &:hover {
+    .after button {
+      clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+    }
+  }
 }
 
 .span {
