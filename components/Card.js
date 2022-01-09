@@ -6,7 +6,13 @@ function Card({ title, imageSrc, ...props }) {
   return (
     <div {...props} className={s.card}>
       <Aspect a={70}>
-        <Image layout="fill" objectFit="cover" src={imageSrc}></Image>
+        <Image
+          // loader={({ src, size, quality }) => src}
+          layout="fill"
+          objectFit="cover"
+          src={imageSrc}
+        ></Image>
+        {/* <img src={imageSrc}></img> */}
       </Aspect>
       <span className={["body2", s.span].join(" ")}>{title}</span>
     </div>

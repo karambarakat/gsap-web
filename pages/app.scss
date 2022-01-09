@@ -2,6 +2,10 @@
 
 @import "../styles/styles.scss";
 
+.p-r {
+  position: relative;
+}
+
 :root {
   @include setColors();
   color: color(text);

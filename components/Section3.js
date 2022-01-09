@@ -1,5 +1,6 @@
 import s from "./Section3.module.scss";
 import Lancome from "./svg/LANCOME";
+// import { ReactComponent as YourSvg } from "./svg/brand.svg";
 
 function Section3() {
   return (
@@ -13,7 +14,7 @@ function Section3() {
         <div className={[s.title, "body1"].join(" ")}>CLEINTS</div>
         <div className={s.brands}>
           {Array.from({ length: 9 }).map((e, i) => (
-            <div className={s.brand}>
+            <div key={i} className={s.brand}>
               <Lancome></Lancome>
             </div>
           ))}
